@@ -19,7 +19,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         `,
         styles: [`
             .pad-left { margin-left: 10px; }
-            .well div { color: red; }
+            .well div { color: #bbb; }
         `]
 })
 
