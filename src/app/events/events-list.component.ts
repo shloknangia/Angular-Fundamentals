@@ -1,28 +1,20 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector:'events-list'
-    template:`
+    selector:'events-list',
+    /*templateUrl: 'events-list.component.html'*/
+    template: `
         <div>
             <h1>Upcomming Angular Events</h1>
-            <hr>
-            <div class="well howerwell thumbnail">
-                <h2>{{event.name}}</h2>
-                <div>Date: {{event.date}}</div>
-                <div>Time: {{event.time}}</div>
-                <div>Price: \${{event.price}}</div>
-                <div>
-                    <span>Location: {{event.location.address}}</span>
-                    <span>&nbsp;</span>
-                    <span>{{event.location.city}}, {{event.location.country}}</span>
-                </div>
-            </div>
+            <hr/>
+            <event-thumbnail <!--(eventClick)="handleEventClicked($event)"--> 
+                [event]="event1"></event-thumbnail>
         </div>
-    `
+        `
 })
 
 export class EventsListComponent{
-    event = {
+    event1 = {
         id: 1,
         name: 'Angular Connect',
         date: '9/26/2036',
@@ -35,4 +27,7 @@ export class EventsListComponent{
             country: 'England'
         }
     }
+    /*handleEventClicked(data){
+        console.log('received:', data)
+    }*/
 }
