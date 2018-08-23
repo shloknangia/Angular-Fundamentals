@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { EventService } from "./shared/event.services";
 
 @Component({
     selector:'events-list',
@@ -16,7 +17,17 @@ import { Component } from "@angular/core";
         `
 })
 
-export class EventsListComponent{
+export class EventsListComponent implements OnInit{
+
+    events:any[]
+    constructor (private eventService: EventService){
+         
+    }
+    
+    ngOnInit(){
+        this.events = this.eventService.getEvents();
+    }
+
     /*event1 = {
         id: 1,
         name: 'Angular Connect',
@@ -34,7 +45,7 @@ export class EventsListComponent{
         console.log('received:', data)
     }*/
     /*comes from api*/
-    events = [
+    /*events = [
         {
           id: 1,
           name: 'Angular Connect',
@@ -125,7 +136,7 @@ export class EventsListComponent{
             city: 'Amsterdam',
             country: 'Netherlands'
           },*/
-          onlineUrl: 'http://ng-nl.org/',
+          /*onlineUrl: 'http://ng-nl.org/',
           sessions: [
             {
               id: 1,
@@ -344,7 +355,7 @@ export class EventsListComponent{
             }
           ]
         }
-      ]
+      ]*/
     
 
 }
