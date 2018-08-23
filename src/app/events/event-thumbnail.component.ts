@@ -19,7 +19,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         `,
         styles: [`
             .pad-left { margin-left: 10px; }
-            .well div { color: #bbb; }
+            .well div { color: red; }
         `]
 })
 
@@ -33,8 +33,8 @@ export class EventThumbnailComponent{
         this.eventClick.emit(this.event.name);
     }*/
 
-    someProperty: any = "some value";
+    /*someProperty: any = "some value";
     logfoo(){
         console.log('foo');
-    }
+    }*/
 }
