@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'event-app',
   template:`
     <nav-bar></nav-bar>
-    <events-list></events-list>
+    <router-outlet></router-outlet>
+    <!--<events-list></events-list>-->
     `,
   /*template: '<h2>Hello World</h2>   <img src="/assets/images/basic-shield.png"/>',*/
 })
