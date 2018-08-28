@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { Error404Component } from './errors/404.component'
 // import { EventRouteActivator } from './events/event-details/event-route-activator.service'
 // import { EventListResolver } from './events/events-list-resolver.service'
+import { AuthService } from './user/auth.service'
 
 import { 
   EventsListComponent,
@@ -45,6 +46,7 @@ import {
     EventService, 
     ToastrService, 
     EventRouteActivator,
+    AuthService,
     EventListResolver,
     { 
       provide: 'canDeactivateCreateEvent', 
