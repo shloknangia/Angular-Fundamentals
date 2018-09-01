@@ -7,6 +7,7 @@ import { EventsAppComponent } from './event-app.component';
 import { NavBarComponent } from './nav/navbar.component'
 // import { EventService } from './events/shared/event.service'
 import { ToastrService } from './common/toastr.service';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 // import { EventDetailsComponent } from './events/event-details/event-details.component'
 import { appRoutes } from './routes'
 import { RouterModule } from '@angular/router';
@@ -40,7 +41,8 @@ import {
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent,
   
   ],
   imports: [
