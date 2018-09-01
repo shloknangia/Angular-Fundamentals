@@ -1,5 +1,3 @@
-import { detachEmbeddedView } from "../../../../node_modules/@angular/core/src/view";
-
 export interface IEvent{
     id: number
     name: string
