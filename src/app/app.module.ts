@@ -35,7 +35,9 @@ import {
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent,
+  VoterService
 } from './events/index'
 
 // declare let toastr: Toastr
@@ -57,7 +59,8 @@ let jQuery = window['$'];
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ let jQuery = window['$'];
     EventRouteActivator,
     AuthService,
     EventListResolver,
+    VoterService,
     { 
       provide: 'canDeactivateCreateEvent', 
       useValue: checkDirtyState
