@@ -28,8 +28,19 @@ export class EventDetailsComponent{
 
         // this.event = this.eventService.getEvent(+this.route.snapshot.params['id']); 
 
-        this.route.params.forEach((params: Params) => {
-            this.event = this.eventService.getEvent(+params['id']);
+        // this.route.params.forEach((params: Params) => {
+        this.route.data.forEach((data) => {
+            // this.event = this.eventService.getEvent(+params['id']);
+
+            // this.eventService.getEvent(+params['id']).subscribe((event: IEvent) => {
+            //     this.event = event;
+            //     this.addMode = false;
+            // });
+
+            // this.addMode = false;
+
+            // this.event = this.route.snapshot.data['event'];
+            this.event = data['event'];
             this.addMode = false;
         })
     }

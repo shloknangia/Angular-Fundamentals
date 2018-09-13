@@ -24,6 +24,7 @@ import { Error404Component } from './errors/404.component'
 // import { EventListResolver } from './events/events-list-resolver.service'
 import { AuthService } from './user/auth.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { 
   EventsListComponent,
@@ -31,14 +32,15 @@ import {
   EventService,
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivator,
+  // EventRouteActivator,
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
   UpvoteComponent,
   VoterService,
-  LocationValidator
+  LocationValidator,
+  EventResolver
 } from './events/index'
 
 // declare let toastr: Toastr
@@ -68,13 +70,15 @@ let jQuery = window['$'];
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     EventService, 
     { provide: TOASTR_TOKEN, useValue: toastr }, 
     { provide: JQ_TOKEN, useValue: jQuery }, 
-    EventRouteActivator,
+    // EventRouteActivator,
+    EventResolver,
     AuthService,
     EventListResolver,
     VoterService,
