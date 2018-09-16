@@ -27,7 +27,7 @@ describe('SessionListComponent', () => {
         })
 
 
-        it('should sort the sessions correctly test', () => {
+        it('should sort the sessions correctly', () => {
             component.sessions = <ISession[]>[
                 {name: 'session 1', level: 'intermediate'},
                 {name: 'session 3', level: 'intermediate'},
