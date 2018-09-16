@@ -38,22 +38,27 @@ export class AuthService{
     updateCurrentUser(firstName: string, lastName: string){
         this.currentUser.firstName = firstName;
         this.currentUser.lastName = lastName; 
+
+        const options = {headers: new HttpHeaders({'Content-Type': "application/json"})};
+        return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options);
     }
 
     checkAuthStatus(){
         this.http.get('/api/currentIdentity')
-            .pipe(tap(data => {
+        //     .pipe(tap(data => {
+        //             console.log("herehereherehhh");
+        //             if(data instanceof Object){
+        //             console.log(data);
+        //             this.currentUser = <IUser>data;
+                    
+        //         }
+        //     }
+        // ))
+
+            .subscribe(data => {
                 if(data instanceof Object){
                     this.currentUser = <IUser>data;
-                    console.log(this.currentUser);
                 }
-            }
-        ))
-
-            // .subscribe(data => {
-            //     if(data instanceof Object){
-            //         this.currentUser = <IUser>data;
-            //     }
-            // })
+            })
     }
 }
