@@ -39,4 +39,21 @@ export class AuthService{
         this.currentUser.firstName = firstName;
         this.currentUser.lastName = lastName; 
     }
+
+    checkAuthStatus(){
+        this.http.get('/api/currentIdentity')
+            .pipe(tap(data => {
+                if(data instanceof Object){
+                    this.currentUser = <IUser>data;
+                    console.log(this.currentUser);
+                }
+            }
+        ))
+
+            // .subscribe(data => {
+            //     if(data instanceof Object){
+            //         this.currentUser = <IUser>data;
+            //     }
+            // })
+    }
 }
