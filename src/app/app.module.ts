@@ -17,7 +17,7 @@ import { JQ_TOKEN,
 
 // import { EventDetailsComponent } from './events/event-details/event-details.component'
 import { appRoutes } from './routes'
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 // import { CreateEventComponent } from './events/create-event.component'
 import { Error404Component } from './errors/404.component'
 // import { EventRouteActivator } from './events/event-details/event-route-activator.service'
@@ -68,7 +68,7 @@ let jQuery = window['$'];
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules}),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
